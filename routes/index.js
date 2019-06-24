@@ -21,7 +21,7 @@ router.post('/result', function(req, res, next) {
     var dbs = db.db('db1');
     dbs.collection('ques').find({}).toArray(function(err,result){
       if (err) throw err;
-      for(i=0;i<=5;i++){    //upto n-1 questions
+      for(i=0;i<result.length;i++){    //upto n-1 questions
         var qr = 'ans'+i;
         if(req.body[qr] == result[i].ans) //answer stored under ans property in db
           ans+=1;
