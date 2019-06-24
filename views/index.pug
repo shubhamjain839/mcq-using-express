@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  form(action="/result", method="post") 
+    table.table.table-striped
+      each res,i in ques
+        tr
+          th=res.ques
+        tr
+          td 
+            span(style="margin-right:50px;") Ans.
+            input(type="radio" name="ans"+i value="true" style="margin-right:10px;")
+            span(style="margin-right:50px;") True
+            input(type="radio" name="ans"+i value="false" style="margin-right:10px;")
+            span(style="margin-right:50px;") False
+      tr
+        td.form-group
+          input.form-control.btn-secondary(type="submit")
+          
